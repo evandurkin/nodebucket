@@ -1,0 +1,22 @@
+<div class="main-container" id="signInContainer">
+  <mat-card class="signIn" style="border: 2px solid #2962ff; box-shadow: none;">
+    <mat-card-title class="logo">nodebucket</mat-card-title>
+
+    <mat-card-content>
+      <div class="msg-error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <form [formGroup]="signinForm" (ngSubmit)="submit(); signinForm.reset()">
+        <mat-card-content>
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label for="empId" id="lblempId">Employee ID</mat-label>
+            <input type="text" required matInput formControlName="empId" id="txtEmpId" name="txtEmpId" />
+          </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button type="submit" [disabled]="!signinForm.valid" fxFlex mat-raised-button color="secondary">submit</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

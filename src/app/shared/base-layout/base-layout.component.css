@@ -1,0 +1,54 @@
+.logo {
+  /* margin-left: 75px; */
+  font-size: 46px;
+}
+mat-toolbar {
+  display: inline-block;
+}
+
+
+.navbar-container {
+  padding: 5px;
+}
+
+.navbar-link {
+  font-size: 24px;
+  font-family: 'PT Sans', sans-serif;
+  color: #2962ff;
+  letter-spacing: -1px;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  padding: 2em 2em;
+  margin-top: 2em;
+}
+.mat-toolbar {
+  background-color: #e3f2fd;
+}
+
+.main-content {
+  padding-left: 30px;
+}
+
+.footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: #e3f2fd;
+}
+
+.footer-content {
+  font-size: 16px;
+  font-weight: lighter;
+  padding-left: 100px;
+  letter-spacing: 3px;
+}
+
+.bu-link {
+  text-decoration: none;
+}
+
+.bu-link:hover {
+  text-decoration: underline;
+}
+

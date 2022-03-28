@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*
+primary #e3f2fd
+secondary #2962ff
+*/
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+  background-color: #e3f2fd;
+}
+
+h1, h2, .logo {
+  font-family: 'Merriweather', serif;
+}
+
+.logo {
+  color: #2962ff;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+

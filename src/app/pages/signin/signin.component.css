@@ -1,0 +1,48 @@
+/*
+=======================================
+// Title: Nodebucket Application
+// Author: Evan Durkin
+// Date: March 27, 2022
+// Description: Sign In page styling
+=======================================
+*/
+
+#signInContainer {
+  margin: 20% auto auto;
+}
+
+.signIn {
+  background-color: #e3f2fd;
+  width: 50%;
+  max-width: 500px;
+}
+
+mat-card.mat-card.mat-focus-indicator.signIn {
+  margin: 0 auto;
+}
+
+.logo {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 1em;
+}
+
+.mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+  color: white;
+  background-color: #2962ff;
+}
+
+.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+}
+
+.mat-card {
+  border-radius: 9px;
+  padding: 2em;
+}
+
+.mat-card-actions, .mat-card-subtitle, .mat-card-content {
+  margin-bottom: 0;
+}
+
