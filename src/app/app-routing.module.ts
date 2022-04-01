@@ -15,6 +15,9 @@ import { BaseLayoutComponent } from './shared/base-layout/base-layout.component'
 import { SigninComponent } from './pages/signin/signin.component';
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
 import { AuthGuard } from './shared/auth.guard';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 // routes for components with auth guard in place
@@ -32,6 +35,14 @@ const routes: Routes = [
         path: 'home',
         component: HomeComponent,
         canActivate: [AuthGuard] //validates user session
+      },
+      {
+        path: 'about',
+        component: AboutComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
       }
     ]
   },
@@ -42,6 +53,10 @@ const routes: Routes = [
       {
         path: 'signin',
         component: SigninComponent
+      },
+      {
+        path: 'page-not-found',
+        component: PageNotFoundComponent
       }
     ]
   }

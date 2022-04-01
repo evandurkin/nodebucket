@@ -13,6 +13,10 @@ body {
   background-color: #e3f2fd;
 }
 
+p {
+  font-family: 'PT Sans', sans-serif;
+}
+
 h1, h2, .logo {
   font-family: 'Merriweather', serif;
 }

@@ -34,6 +34,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import { MatInputModule } from '@angular/material/input';
     HomeComponent,
     SigninComponent,
     AuthLayoutComponent,
-    BaseLayoutComponent
+    BaseLayoutComponent,
+    PageNotFoundComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

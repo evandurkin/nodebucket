@@ -1,0 +1,13 @@
+.contact-text {
+  font-size: 30px;
+  color: #2962ff;
+}
+
+.contact-card {
+  background-color: #e3f2fd;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+}
