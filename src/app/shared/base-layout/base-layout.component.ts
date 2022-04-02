@@ -20,11 +20,19 @@ import { Router } from '@angular/router';
 })
 export class BaseLayoutComponent implements OnInit {
 
-  constructor(private cookieService: CookieService, private router: Router) { }
-
   year: number = Date.now();
+  isLoggedIn: boolean;
+  name: string;
+
+  constructor(private cookieService: CookieService, private router: Router) {
+    this.isLoggedIn = this.cookieService.get("session_user") ? true : false;
+    console.log("isLoggedIn: " + this.isLoggedIn);
+  }
+
 
   ngOnInit(): void {
+    this.name = sessionStorage.getItem("name");
+    console.log("logged in user name " + this.name);
   }
 
   signOut() {

@@ -39,23 +39,20 @@ export class SigninComponent implements OnInit {
     })
   }
 
-  get form() {
-    return this.signinForm.controls;
-  }
-
   // on submit, this validates the session user with the ID and directs them to the home page
-  submit(){
+  submit(): void {
     const empId = this.signinForm.controls['empId'].value;
 
     this.http.get('/api/employees/' + empId).subscribe(res =>
       {
         if (res)
         {
+          sessionStorage.setItem("name", `${res["firstName"]} ${res["lastName"]}`);
           this.cookieService.set('session_user', empId, 1);
           this.router.navigate(['/']);
         }
         else {
-          this.errorMessage = `Invalid ID.`
+          this.errorMessage = `Invalid Employee ID.`
         }
       })
   }
