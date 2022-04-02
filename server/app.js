@@ -16,6 +16,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const Employee = require("./models/employee");
 const EmployeeRoutes = require("./routes/employees-routes");
+const TaskRoutes = require("./routes/task-routes");
 
 // App configurations
 let app = express();
@@ -48,6 +49,7 @@ mongoose
 
 // API uses the employees-routes
 app.use("/api/employees", EmployeeRoutes);
+app.use("/api/employees", TaskRoutes);
 
 // Creates the server and listens on port 3000
 http.createServer(app).listen(port, function () {

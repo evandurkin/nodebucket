@@ -17,7 +17,7 @@ router.get("/:empId", async (req, res) => {
   //adds id to '/api/employees'
   try {
     Employee.findOne({ empId: req.params.empId }, function (err, employee) {
-      //find one ID with parameturs in url
+      //find one ID with parameters in url
       if (err) {
         res.status(500).send({
           message: `Error. Invalid ID`, //sends error message if ID is incorrect
