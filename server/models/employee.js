@@ -24,8 +24,5 @@ const employeeSchema = new Schema(
   { collection: "employees" }
 );
 
-let Employee = mongoose.model("Employee", employeeSchema);
-
 // exports employee schema
-module.exports = Employee;
 module.exports = mongoose.model("Employee", employeeSchema);

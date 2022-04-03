@@ -62,7 +62,8 @@ router.get("/:empId/tasks", async (req, res) => {
 // Create New Task
 router.post("/:empId/tasks", async (req, res) => {
   try {
-    Employee.findOne({ empId: req.params.empId }), // finds employee by ID to add task to
+    Employee.findOne(
+      { empId: req.params.empId }, // finds employee by ID to add task to
       function (err, employee) {
         if (err) {
           console.log(err);
@@ -75,22 +76,22 @@ router.post("/:empId/tasks", async (req, res) => {
             // uses the text field from the item schema
             text: req.body.text,
           };
+          employee.toDo.push(newItem); // adds the task to the employee tasks
+
+          employee.save(function (err, updatedEmployee) {
+            if (err) {
+              console.log(err);
+              res.status(500).send({
+                message: `Internal server error: ` + err.message,
+              });
+            } else {
+              console.log(updatedEmployee);
+              res.json(updatedEmployee);
+            }
+          });
         }
-
-        employee.toDo.push(newItem); // adds the task to the employee tasks
-
-        employee.save(function (err, updatedEmployee) {
-          if (err) {
-            console.log(err);
-            res.status(500).send({
-              message: `Internal server error: ` + err.message,
-            });
-          } else {
-            console.log(updatedEmployee);
-            res.json(updatedEmployee);
-          }
-        });
-      };
+      }
+    );
   } catch (e) {
     console.log(e);
     res.status(500).send({
