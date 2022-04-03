@@ -1,3 +1,12 @@
+/*
+==========================================================
+// Title: Nodebucket Application
+// Author: Evan Durkin
+// Date: March 27, 2022
+// Description: Home page
+==========================================================
+*/
+
 import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/app/shared/models/employee.interface';
 import { Item } from 'src/app/shared/models/item.interface';
@@ -14,6 +23,7 @@ import { CreateTaskComponent } from 'src/app/shared/create-task/create-task.comp
 })
 export class HomeComponent implements OnInit {
 
+  // Employee fields variables
   employee: Employee;
   toDo: Item[];
   done: Item[];
@@ -49,11 +59,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Opens the createTask component screen for user data input
   openCreateTaskDialog() {
     const dialogRef = this.dialog.open(CreateTaskComponent, {
       disableClose: true
     })
-
+    // after user closes dialog, the data is used to create a task
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
         this.taskService.createTask(this.empId, data.text).subscribe(res => {

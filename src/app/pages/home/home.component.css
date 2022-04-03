@@ -1,20 +1,70 @@
+/*
+=======================================
+// Title: Nodebucket Application
+// Author: Evan Durkin
+// Date: April 3, 2022
+// Description: Home page styling
+=======================================
+*/
+
+
+/**** main page container ****/
 .main-welcome {
     margin: 3em auto auto;
     min-width: 750px;
     max-width: 900px;
   }
 
-.title {
+/**** Angular Material card styling ****/
+mat-card {
+  background-color: #e3f2fd;
+}
+
+.mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer) {
+  font-family: 'PT Sans', sans-serif;
+  color: #2962ff;
+  font-size: 18px;
+}
+
+section#tasks-section {
+  border: 1px solid #2962ff;
+  border-radius: 10px;
+}
+
+
+/**** Angular Material icon and page text styling ****/
+mat-icon.mat-icon.notranslate.task-icon.material-icons.mat-icon-no-color {
+  font-size: 30px;
+}
+mat-icon.mat-icon.notranslate.smile-icon.material-icons.mat-icon-no-color{
+  font-size: 30px;
+}
+
+.task-col-title {
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 900;
+    font-style: italic;
+    color:#2962ff;
     text-align: center;
-    font-weight: lighter;
+    margin-bottom: 1em;
   }
 
-.subtitle {
-    text-align: center;
-    font-size: 14px;
+.task-text {
+    border: 1px solid #2962ff;
+    border-radius: 10px;
+    padding: 1em;
   }
 
-  button.mat-focus-indicator.mat-stroked-button.mat-button-base {
+.task-column {
+  font-family: 'PT Sans', sans-serif;
+  color: #2962ff;
+  font-size: 1em;
+}
+
+
+/**** Angular Material button styling ****/
+button.mat-focus-indicator.mat-stroked-button.mat-button-base {
   width: 100%;
   font-size: 32px;
   font-family: 'PT Sans', sans-serif;

@@ -1,3 +1,12 @@
+/*
+==========================================================
+// Title: Nodebucket Application
+// Author: Evan Durkin
+// Date: March 27, 2022
+// Description: Contact page
+==========================================================
+*/
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

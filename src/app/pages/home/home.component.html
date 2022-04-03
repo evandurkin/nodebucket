@@ -1,3 +1,12 @@
+<!--
+===================================================
+// Title: Nodebucket Application
+// Author: Evan Durkin
+// Date: April 3, 2022
+// Description: Home pages layout with task cards
+===================================================
+-->
+
 <div fxLayout="column" class="main-welcome">
 
   <section id="create-task-button">
@@ -15,7 +24,9 @@
         <!-------TO DO TASKS COLUMN------->
         <div fxFlex>
           <mat-card class="mat-elevation-z0" style="margin: 5px;">
-            <mat-card-title>Let's Do It</mat-card-title>
+            <mat-card-title class="task-col-title">Let's Do It
+              <mat-icon aria-hidden="false" aria-label="Sentiment Satisfied Icon" class="smile-icon">sentiment_satisfied_alt</mat-icon>
+            </mat-card-title>
 
             <mat-card-content>
               <div class="task-column">
@@ -23,7 +34,7 @@
                   <mat-card class="mat-elevation-z0 task-card">
                     <mat-card-content>
                       <div fxLayout="row">
-                        <div fxFlex>{{ item.text }}</div>
+                        <div fxFlex class="task-text">{{ item.text }}</div>
                       </div>
                     </mat-card-content>
                   </mat-card>
@@ -41,7 +52,9 @@
 
         <div fxFlex>
           <mat-card class="mat-elevation-z0" style="margin: 5px;">
-            <mat-card-title>Done</mat-card-title>
+            <mat-card-title class="task-col-title">Done
+              <mat-icon aria-hidden="false" aria-label="Task Icon" class="task-icon">task</mat-icon>
+            </mat-card-title>
 
             <mat-card-content>
               <div class="task-column">

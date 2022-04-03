@@ -1,3 +1,12 @@
+/*
+=======================================
+// Title: Nodebucket Application
+// Author: Evan Durkin
+// Date: April 3, 2022
+// Description: Create Task component
+=======================================
+*/
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -23,10 +32,12 @@ export class CreateTaskComponent implements OnInit {
     })
   }
 
+  //submits the user data to the form to add a new task
   createTask() {
     this.dialogRef.close(this.taskForm.value);
   }
 
+  // cancel button to close the createTask dialog
   cancel() {
     this.dialogRef.close
   }

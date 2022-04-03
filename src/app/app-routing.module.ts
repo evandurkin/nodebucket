@@ -29,12 +29,12 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent,
-        canActivate: [AuthGuard] //validates user session
+        // canActivate: [AuthGuard] //validates user session
       },
       {
         path: 'home',
         component: HomeComponent,
-        canActivate: [AuthGuard] //validates user session
+        // canActivate: [AuthGuard] //validates user session
       },
       {
         path: 'about',

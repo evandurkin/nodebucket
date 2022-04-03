@@ -2,7 +2,7 @@
 ===================================================
 // Title: Nodebucket Application
 // Author: Evan Durkin
-// Date: March 30, 2022
+// Date: April 3, 2022
 // Description: Mongoose model for Employee schema
 ===================================================
 */
@@ -12,7 +12,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const itemSchema = require("./item");
 
-// Employee Schema requiring id, first and last name and items
+// Employee Schema requiring id, first and last name and item schema
 const employeeSchema = new Schema(
   {
     empId: { type: String, unique: true },

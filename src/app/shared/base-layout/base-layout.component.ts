@@ -35,6 +35,7 @@ export class BaseLayoutComponent implements OnInit {
     console.log("logged in user name " + this.name);
   }
 
+  //signs user out and redirects to signin page
   signOut() {
     this.cookieService.deleteAll();
     this.router.navigate(['/session/signin']);
