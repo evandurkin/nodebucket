@@ -5,28 +5,26 @@
     <mat-toolbar class="navbar-container">
       <!-- navbar container -->
         <button class="logo" routerLink="/" mat-button>nodebucket</button>
-        <button style="float: right"class="navbar-link" mat-button>sign out</button>
+        <div *ngIf="isLoggedIn" class="navbar-link" style="float: right">
+
+          <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="User profile menu">
+            <mat-icon>perm_identity</mat-icon>
+          </button>
+
+          <mat-menu #profileMenu>
+            <p style="padding: 10px;">Sign in as {{ name }}</p>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="signOut()">
+              <mat-icon>logout</mat-icon>
+              <span>sign out</span>
+            </button>
+          </mat-menu>
+        </div>
         <button style="float: right"class="navbar-link" routerLink="/contact" mat-button>contact</button>
         <button style="float: right"class="navbar-link" routerLink="/about" mat-button>about</button>
-        <button style="float: right" class="navbar-link" routerLink="/" mat-button>home</button>
+        <!-- <button style="float: right" class="navbar-link" routerLink="/" mat-button>home</button> -->
     </mat-toolbar>
   </nav>
-
-  <div *ngIf="isLoggedIn">
-
-    <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="User profile menu">
-      <mat-icon>perm_identity</mat-icon>
-    </button>
-
-    <mat-menu #profileMenu>
-      <p style="padding: 10px;">Sign in as {{ name }}</p>
-      <mat-divider></mat-divider>
-      <button mat-menu-item (click)="signOut()">
-        <mat-icon>logout</mat-icon>
-        <span>sign out</span>
-      </button>
-    </mat-menu>
-  </div>
 
   <!-- main content -->
   <div fxFlex>

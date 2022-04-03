@@ -49,4 +49,23 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+  openCreateTaskDialog() {
+    const dialogRef = this.dialog.open(CreateTaskComponent, {
+      disableClose: true
+    })
+
+    dialogRef.afterClosed().subscribe(data => {
+      if(data) {
+        this.taskService.createTask(this.empId, data.text).subscribe(res => {
+          this.employee = res;
+        }, err => {
+          console.log("Server Error");
+          console.log(err);
+        }, () => {
+          this.toDo = this.employee.toDo;
+          this.done = this.employee.done;
+        })
+        }
+      })
+    }
+  }

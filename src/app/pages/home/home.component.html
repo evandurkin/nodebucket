@@ -1,3 +1,67 @@
 <div fxLayout="column" class="main-welcome">
 
+  <section id="create-task-button">
+    <div class="btn-create-task">
+      <button mat-stroked-button (click)="openCreateTaskDialog()">Create a Task</button>
+    </div>
+  </section>
+
+
+  <section id="tasks-section">
+
+    <div fxFlex class="toDo-tasks">
+      <div fxLayout="row" fxLayoutGap="15px">
+
+        <!-------TO DO TASKS COLUMN------->
+        <div fxFlex>
+          <mat-card class="mat-elevation-z0" style="margin: 5px;">
+            <mat-card-title>Let's Do It</mat-card-title>
+
+            <mat-card-content>
+              <div class="task-column">
+                <div *ngFor="let item of toDo">
+                  <mat-card class="mat-elevation-z0 task-card">
+                    <mat-card-content>
+                      <div fxLayout="row">
+                        <div fxFlex>{{ item.text }}</div>
+                      </div>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+      <!-------DONE TASKS COLUMN------->
+    <div fxFlex class="done-tasks">
+      <div fxLayout="row" fxLayoutGap="15px">
+
+        <div fxFlex>
+          <mat-card class="mat-elevation-z0" style="margin: 5px;">
+            <mat-card-title>Done</mat-card-title>
+
+            <mat-card-content>
+              <div class="task-column">
+                <div *ngFor="let item of done">
+                  <mat-card class="mat-elevation-z0 task-card">
+                    <mat-card-content>
+                      <div fxLayout="row">
+                        <div fxFlex>{{ item.text }}</div>
+                      </div>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
 </div>

@@ -6,6 +6,10 @@ mat-toolbar {
   display: inline-block;
 }
 
+.mat-button:hover {
+  font-weight: bold;
+}
+
 .navbar-container {
   padding: 5px;
 }

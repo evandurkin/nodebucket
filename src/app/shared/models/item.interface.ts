@@ -9,5 +9,5 @@
 
 export interface Item {
   _id: string;
-  test: string;
+  text: string;
 }

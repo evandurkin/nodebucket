@@ -1,14 +1,34 @@
 .main-welcome {
-    margin-top: 30px;
+    margin: 3em auto auto;
+    min-width: 750px;
+    max-width: 900px;
   }
-  
-  .title {
+
+.title {
     text-align: center;
     font-weight: lighter;
   }
-  
-  .subtitle {
+
+.subtitle {
     text-align: center;
     font-size: 14px;
   }
-  
+
+  button.mat-focus-indicator.mat-stroked-button.mat-button-base {
+  width: 100%;
+  font-size: 32px;
+  font-family: 'PT Sans', sans-serif;
+  color: #2962ff;
+  padding: 15px;
+  border-radius: 53px;
+  margin: 2em 0 1em;
+  border-color: #2962ff;
+}
+
+button.mat-focus-indicator.mat-stroked-button.mat-button-base:hover {
+  font-weight: bold;
+}
+
+.mat-stroked-button:not(.mat-button-disabled) {
+  border-color: none;
+}
