@@ -1,0 +1,59 @@
+.about-container {
+  margin: 4em auto;
+display: table;
+line-height: normal;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px 550px;
+  grid-template-rows: 90px 90px 90px 90px;
+  row-gap: 7px;
+  column-gap: 40px;
+}
+
+.blueBox {
+  background-color: #2962ff;
+  border-radius: 12px;
+  /* color: white;
+  font-family: 'Merriweather', serif;
+  font-size: 40px; */
+}
+
+.blueBoxText {
+  color: white;
+  font-family: 'Merriweather', serif;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.about-logo {
+  color: #2962ff;
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.c1-1 {
+  grid-row: 1;
+  grid-column: 1;
+}
+.c1-2 {
+  grid-row: 2;
+  grid-column: 1;
+}
+.c1-3 {
+  grid-row: 3;
+  grid-column: 1;
+}
+.c1-4 {
+  grid-row: 4;
+  grid-column: 1;
+}
+.about-info {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 26px;
+  color: #2962ff;
+  grid-column: 2;
+  grid-row: 1/5;
+}
