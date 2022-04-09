@@ -59,6 +59,10 @@ const routes: Routes = [
         component: PageNotFoundComponent
       }
     ]
+  },
+  {
+    path: '**',
+    redirectTo: 'session/page-not-found'
   }
 ];
 

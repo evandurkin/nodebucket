@@ -16,6 +16,11 @@
   }
 
 /**** Angular Material card styling ****/
+.task-card {
+  border: 1px solid #2962ff;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
 mat-card {
   background-color: #e3f2fd;
 }
@@ -24,11 +29,6 @@ mat-card {
   font-family: 'PT Sans', sans-serif;
   color: #2962ff;
   font-size: 18px;
-}
-
-section#tasks-section {
-  border: 1px solid #2962ff;
-  border-radius: 10px;
 }
 
 
@@ -50,11 +50,11 @@ mat-icon.mat-icon.notranslate.smile-icon.material-icons.mat-icon-no-color{
     margin-bottom: 1em;
   }
 
-.task-text {
+/* .task-text {
     border: 1px solid #2962ff;
     border-radius: 10px;
     padding: 1em;
-  }
+  } */
 
 .task-column {
   font-family: 'PT Sans', sans-serif;

@@ -2,8 +2,9 @@
 ==========================================================
 // Title: Nodebucket Application
 // Author: Evan Durkin
-// Date: March 27, 2022
-// Description: Route setup for the FindEmployeeById route
+// Date: April 9, 2022
+// Description: Route setup for the employee tasks and create,
+//              find all, and delete
 ==========================================================
 */
 
@@ -101,8 +102,9 @@ router.post("/:empId/tasks", async (req, res) => {
   }
 });
 
-// updateTask
+// updateTask after drag-and-drops
 router.put("/:empId/tasks", async (req, res) => {
+  // finds the employee by ID and then calls the toDo and done
   try {
     Employee.findOne({ empId: req.params.empId }, function (err, employee) {
       if (err) {
@@ -121,6 +123,7 @@ router.put("/:empId/tasks", async (req, res) => {
         });
 
         employee.save(function (err, updatedEmployee) {
+          // saves the updated employee and displays new arrays
           if (err) {
             console.log(err);
             const updateTaskOnSaveMongoErrorResponse = new BaseResponse(
@@ -197,7 +200,7 @@ router.delete("/:empId/tasks/:taskId", async (req, res) => {
                 .status(500)
                 .send(updateTaskOnSaveMongoErrorResponse.toObject());
             } else {
-              console.log(updatedToDoneEmployee);
+              console.log(updatedDoneItemEmployee);
               res.json(updatedDoneItemEmployee.toObject());
             }
           });
