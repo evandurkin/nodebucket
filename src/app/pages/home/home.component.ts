@@ -10,11 +10,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/app/shared/models/employee.interface';
 import { Item } from 'src/app/shared/models/item.interface';
-import { SessionUser } from 'src/app/shared/models/session-user.interface';
 import { CookieService } from 'ngx-cookie-service';
 import { TaskService } from 'src/app/shared/services/task.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTaskComponent } from 'src/app/shared/create-task/create-task.component';
+import { CdkDragDrop, DragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-home',
@@ -79,4 +79,54 @@ export class HomeComponent implements OnInit {
         }
       })
     }
+
+  // drag and drop for To-Do and Done task cards
+  drop(event: CdkDragDrop<any[]>) {
+    if(event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+
+      console.log(`Reordered the existing list of task items`);
+
+      this.updateTaskList(this.empId, this.toDo, this.done);
+    } else {
+      transferArrayItem (event.previousContainer.data,
+                          event.container.data,
+                          event.previousIndex,
+                          event.currentIndex);
+
+                          console.log(`Moved task item to the container`);
+
+                          this.updateTaskList(this.empId, this.toDo, this.done);
+    }
+  }
+
+  // update the task lists
+  updateTaskList(empId: string, toDo: Item[], done: Item[]): void {
+    this.taskService.updateTask(empId, toDo, done).subscribe(res => {
+      this.employee = res.data;
+    }, err => {
+      console.log(err)
+    }, () => {
+      this.toDo = this.employee.toDo;
+      this.done = this.employee.done;
+    })
+  }
+
+  // delete a task by the taskId
+  deleteTask(taskId: string) {
+    if(confirm(`Are you sure you want to delete this task?`)) {
+      if(taskId) {
+        console.log(`Task item: ${taskId} was deleted`);
+
+        this.taskService.deleteTask(this.empId, taskId).subscribe(res => {
+          this.employee = res.data;
+        }, err => {
+          console.log(err);
+        }, () => {
+          this.toDo = this.employee.toDo;
+          this.done = this.employee.done;
+        })
+      }
+    }
+  }
   }

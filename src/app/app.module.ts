@@ -40,6 +40,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CreateTaskComponent } from './shared/create-task/create-task.component';
+import { DragDropModule } from '@angular/cdk/drag-drop'
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { CreateTaskComponent } from './shared/create-task/create-task.component'
     MatMenuModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DragDropModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

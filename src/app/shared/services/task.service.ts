@@ -10,6 +10,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Item } from '../models/item.interface';
 
 
 @Injectable({
@@ -29,5 +30,17 @@ export class TaskService {
     return this.http.post("/api/employees/" + empId + "/tasks", {
       text: task
     })
+  }
+
+  // update the list of tasks after changes
+  updateTask(empId: string, toDo: Item[], done: Item[]): Observable<any> {
+    return this.http.put('/api/employees/' + empId + '/tasks', {
+      toDo, done
+    })
+  }
+
+  // delete a task
+  deleteTask(empId: string, taskId: string): Observable<any> {
+    return this.http.delete('/api/employees/' + empId + '/tasks/' + taskId)
   }
 }
