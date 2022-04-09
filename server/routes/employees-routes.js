@@ -100,4 +100,84 @@ router.post("/:empId/tasks", async (req, res) => {
   }
 });
 
+// updateTask
+router.put("/:empId/tasks", async (req, res) => {
+  try {
+    Employee.findOne({ empId: req.params.empId }, function (err, employee) {
+      if (err) {
+        consol.log(err);
+        res.status(501).send({
+          message: `MongoDB server error`,
+        });
+      } else {
+        console.log(employee);
+        employee.set({
+          toDo: req.body.toDo,
+          done: req.body.done,
+        });
+
+        employee.save(function (err, updatedEmployee) {
+          if (err) {
+            console.log(err);
+            res.json(updatedEmployee);
+          }
+        });
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    res.status(500).send({
+      message: `Internal server error: ` + e.message,
+    });
+  }
+});
+
+router.delete("/:empId/tasks/:taskId", async (req, res) => {
+  try {
+    Employee.fineOne({ empId: req.params.empId }, function (err, employee) {
+      if (err) {
+        console.log(err);
+        res.status(501).send({ message: `MongoDB server error` });
+      } else {
+        console.log(employee);
+        const toDoItem = employee.toDo.find(
+          (item) => item._id.toString() === req.params.taskId
+        );
+        const doneItem = employee.done.find(
+          (item) => item._id.toString() === req.params.taskId
+        );
+
+        if (toDoItem) {
+          employee.toDo.id(toDoItem._id).remove();
+          employee.save(function (err, updatedToDoItemEmployee) {
+            if (err) {
+              console.log(err);
+              res.status(501).send({ message: `MongoDB server error` });
+            }
+          });
+        } else if (doneItem) {
+          employee.done.id(doneItem._id).remove();
+          employee.save(function (err, updatedDoneItemEmployee) {
+            if (err) {
+              console.log(err);
+              res.status(500).send({ message: `Internal server error` });
+            } else {
+              console.log(updatedDoneItemEmployee);
+              res.json(updatedDoneItemEmployee.toObject());
+            }
+          });
+        } else {
+          console.log("Invalid ID");
+          res
+            .status(200)
+            .send({ message: `Unable to delete task from requested task ID` });
+        }
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    res.status(500).send({ message: `Internal server error` });
+  }
+});
+
 module.exports = router;
