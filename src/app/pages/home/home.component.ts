@@ -15,6 +15,7 @@ import { TaskService } from 'src/app/shared/services/task.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTaskComponent } from 'src/app/shared/create-task/create-task.component';
 import { CdkDragDrop, DragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-home',

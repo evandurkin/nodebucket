@@ -18,12 +18,12 @@
 
   <section id="tasks-section">
 
-    <div fxFlex>
+    <div fxFlex class="tasks-container">
       <div fxLayout="row" fxLayoutGap="15px">
 
         <!-------To-Do Tasks Column------->
         <div fxFlex>
-          <mat-card class="mat-elevation-z0" style="margin: 5px;">
+          <mat-card class="mat-elevation-z0" style="margin: 10px;">
             <mat-card-title class="task-col-title">Let's Do It
               <mat-icon aria-hidden="false" aria-label="Sentiment Satisfied Icon" class="smile-icon">sentiment_satisfied_alt</mat-icon>
             </mat-card-title>
@@ -45,7 +45,7 @@
 
                         <div fxFlex fxLayoutAlign="end">
                           <button mat-icon-button (click)="deleteTask(item._id)">
-                            <mat-icon color="red">delete</mat-icon>
+                            <mat-icon>delete</mat-icon>
                           </button>
                         </div>
                       </div>
@@ -59,7 +59,7 @@
 
         <!-------Done Tasks Column------->
         <div fxFlex>
-          <mat-card class="mat-elevation-z0" style="margin: 5px;">
+          <mat-card class="mat-elevation-z0" style="margin: 10px;">
             <mat-card-title class="task-col-title">Done
               <mat-icon aria-hidden="false" aria-label="Task Icon" class="task-icon">task</mat-icon>
             </mat-card-title>
@@ -80,7 +80,7 @@
                         <div fxFlex>{{ item.text }}</div>
                         <div fxFlex fxLayoutAlign="end">
                           <button mat-icon-button (click)="deleteTask(item._id)">
-                            <mat-icon color="red">delete</mat-icon>
+                            <mat-icon>delete</mat-icon>
                           </button>
                         </div>
                       </div>

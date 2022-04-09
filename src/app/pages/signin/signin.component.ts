@@ -52,7 +52,7 @@ export class SigninComponent implements OnInit {
           this.router.navigate(['/']);
         }
         else {
-          this.errorMessage = `Invalid Employee ID.`
+          this.errorMessage = `Invalid Employee ID. Please try again.`
         }
       })
   }

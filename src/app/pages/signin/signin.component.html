@@ -3,6 +3,7 @@
     <mat-card-title class="logo">nodebucket</mat-card-title>
 
     <mat-card-content>
+      <!--error message for invalid employee ID-->
       <div class="msg-error" *ngIf="errorMessage">{{ errorMessage }}</div>
 
       <form [formGroup]="signinForm" (ngSubmit)="submit(); signinForm.reset()">
@@ -10,6 +11,16 @@
           <mat-form-field fxFlex appearance="fill">
             <mat-label for="empId" id="lblempId">Employee ID</mat-label>
             <input type="text" required matInput formControlName="empId" id="txtEmpId" name="txtEmpId" />
+
+            <!--user input ID error messages-->
+            <mat-error *ngIf="signinForm.controls['empId'].hasError('required')">
+              Employee ID is a required field.
+            </mat-error>
+
+            <mat-error *ngIf="signinForm.controls['empId'].hasError('pattern')">
+              Employee ID must be a numerical value.
+            </mat-error>
+
           </mat-form-field>
         </mat-card-content>
 

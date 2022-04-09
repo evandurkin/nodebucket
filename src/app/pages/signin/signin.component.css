@@ -46,3 +46,7 @@ mat-card.mat-card.mat-focus-indicator.signIn {
   margin-bottom: 0;
 }
 
+.msg-error {
+  color: red;
+}
+
