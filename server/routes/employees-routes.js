@@ -150,6 +150,7 @@ router.put("/:empId/tasks", async (req, res) => {
   }
 });
 
+// delete a task
 router.delete("/:empId/tasks/:taskId", async (req, res) => {
   try {
     Employee.findOne({ empId: req.params.empId }, function (err, employee) {

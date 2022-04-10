@@ -1,7 +1,11 @@
+/* about page styling*/
+
+
+/****** container styling ******/
 .about-container {
-  margin: 4em auto;
-display: table;
-line-height: normal;
+  margin: 5em auto;
+  display: table;
+  line-height: normal;
 }
 
 .grid-container {
@@ -12,12 +16,17 @@ line-height: normal;
   column-gap: 40px;
 }
 
+.how-to-container {
+  border-top: 1px solid #2962ff;
+  border-bottom: 1px solid #2962ff;
+  margin-top: 3em;
+}
+
+/****** blue boxes for "stay on track" text styling ******/
 .blueBox {
   background-color: #2962ff;
   border-radius: 12px;
-  /* color: white;
-  font-family: 'Merriweather', serif;
-  font-size: 40px; */
+  display: table;
 }
 
 .blueBoxText {
@@ -25,13 +34,8 @@ line-height: normal;
   font-family: 'Merriweather', serif;
   font-size: 40px;
   font-weight: 900;
-}
-
-.about-logo {
-  color: #2962ff;
-  font-family: 'Merriweather', serif;
-  font-size: 26px;
-  font-weight: 900;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .c1-1 {
@@ -50,10 +54,61 @@ line-height: normal;
   grid-row: 4;
   grid-column: 1;
 }
+
+/****** about-text section styling ******/
+.text{
+  display: table-cell;
+  vertical-align: middle;
+}
+.about-logo {
+  color: #2962ff;
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+  font-weight: 900;
+}
+
 .about-info {
   font-family: 'PT Sans', sans-serif;
   font-size: 26px;
   color: #2962ff;
   grid-column: 2;
   grid-row: 1/5;
+}
+
+/****** How-To section styling ******/
+.how-to-title {
+  font-family: 'Merriweather', serif;
+  font-weight: 900; font-size: 26px;
+  text-align: center;
+}
+.how-to-table {
+  font-family: 'PT Sans', sans-serif;
+  color: #2962ff;
+  font-size: 23px;
+}
+
+tr, td {
+  padding: 5px;
+}
+
+.link-back-to-tasks {
+  text-decoration: none;
+  color: white;
+  display: block;
+  margin: 2em auto auto;
+  width: 50%;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 26px;
+  border-radius: 53px;
+  padding: 7px;
+  background-color: #2962ff;
+  text-align: center;
+  box-shadow: 0px 3px 6px #888888;
+}
+
+.link-back-to-tasks:hover {
+  background-color: #2962ff;
+  color: white;
+  transition: .3s;
+  box-shadow: 0px 6px 9px #888888;
 }

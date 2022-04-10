@@ -21,20 +21,36 @@
 }
 
 /**** Angular Material card styling ****/
-.task-card {
+.task-card-toDo {
+  font-family: 'PT Sans', sans-serif;
+  color: #2962ff;
+  font-size: 18px;
   border: 1px solid #2962ff;
   border-radius: 10px;
   margin-bottom: 1em;
 }
+.task-card-done {
+  font-family: 'PT Sans', sans-serif;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  background-color: #2962ff;
+}
+
+.task-card {
+  font-size: 18px;
+}
+
 mat-card {
   background-color: #e3f2fd;
 }
 
-.mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer) {
+/* .mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer) {
   font-family: 'PT Sans', sans-serif;
   color: #2962ff;
   font-size: 18px;
-}
+} */
 
 
 /**** Angular Material icon and page text styling ****/
@@ -54,12 +70,6 @@ mat-icon.mat-icon.notranslate.smile-icon.material-icons.mat-icon-no-color{
     text-align: center;
     margin-bottom: 1em;
   }
-
-/* .task-text {
-    border: 1px solid #2962ff;
-    border-radius: 10px;
-    padding: 1em;
-  } */
 
 .task-column {
   font-family: 'PT Sans', sans-serif;

@@ -1,15 +1,21 @@
+/* base layout styling */
+
 .logo {
-  /* margin-left: 75px; */
   font-size: 46px;
 }
+
+.logo:hover {
+  text-shadow: 0px 4px 5px #888888;
+  transition: .2s;
+}
+
 mat-toolbar {
   display: inline-block;
 }
 
-.mat-button:hover {
-  font-weight: bold;
+.about:hover, .contact:hover {
+  text-decoration: underline;
 }
-
 .navbar-container {
   padding: 5px;
 }
@@ -27,10 +33,6 @@ mat-toolbar {
 }
 .mat-toolbar {
   background-color: #e3f2fd;
-}
-
-.main-content {
-  /* padding-left: 30px; */
 }
 
 .footer {

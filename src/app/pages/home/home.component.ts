@@ -90,14 +90,15 @@ export class HomeComponent implements OnInit {
 
       this.updateTaskList(this.empId, this.toDo, this.done);
     } else {
-      transferArrayItem (event.previousContainer.data,
-                          event.container.data,
-                          event.previousIndex,
-                          event.currentIndex);
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,);
 
-                          console.log(`Moved task item to the container`);
+      console.log(`Moved task item to the container`);
 
-                          this.updateTaskList(this.empId, this.toDo, this.done);
+      this.updateTaskList(this.empId, this.toDo, this.done);
     }
   }
 

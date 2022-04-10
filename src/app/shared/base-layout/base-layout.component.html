@@ -13,7 +13,7 @@
   <nav fxFlex>
     <mat-toolbar class="navbar-container">
       <!-- navbar container -->
-        <button class="logo" routerLink="/" mat-button>nodebucket</button>
+        <button class="logo no-hover-effect" routerLink="/" mat-button>nodebucket</button>
         <div *ngIf="isLoggedIn" class="navbar-link" style="float: right">
 
           <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="User profile menu">
@@ -29,8 +29,8 @@
             </button>
           </mat-menu>
         </div>
-        <button style="float: right"class="navbar-link" routerLink="/contact" mat-button>contact</button>
-        <button style="float: right"class="navbar-link" routerLink="/about" mat-button>about</button>
+        <button style="float: right"class="navbar-link contact" routerLink="/contact" mat-button>contact</button>
+        <button style="float: right"class="navbar-link about" routerLink="/about" mat-button>about</button>
         <!-- <button style="float: right" class="navbar-link" routerLink="/" mat-button>home</button> -->
     </mat-toolbar>
   </nav>
