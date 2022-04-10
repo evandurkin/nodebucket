@@ -27,6 +27,7 @@
   background-color: #2962ff;
   border-radius: 12px;
   display: table;
+  max-height: 90px;
 }
 
 .blueBoxText {

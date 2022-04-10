@@ -146,6 +146,11 @@ router.put("/:empId/tasks", async (req, res) => {
     });
   } catch (e) {
     console.log(e);
+    const updateTaskOnSaveMongoErrorResponse = new BaseResponse(
+      "500",
+      "MongoDB Server Error",
+      e.msg
+    );
     res.status(500).send(updateTaskOnSaveMongoErrorResponse.toObject());
   }
 });
@@ -197,12 +202,20 @@ router.delete("/:empId/tasks/:taskId", async (req, res) => {
           employee.save(function (err, updatedDoneItemEmployee) {
             if (err) {
               console.log(err);
-              res
-                .status(500)
-                .send(updateTaskOnSaveMongoErrorResponse.toObject());
+              const deleteDoneItemMongoErrorResponse = new BaseResponse(
+                "501",
+                "MongoDB Server Error",
+                err
+              );
+              res.status(501).send(deleteDoneItemMongoErrorResponse.toObject());
             } else {
               console.log(updatedDoneItemEmployee);
-              res.json(updatedDoneItemEmployee.toObject());
+              const deleteDoneItemOnSuccessResponse = new BaseResponse(
+                "200",
+                "Removed item from the ToDo List",
+                updatedDoneItemEmployee
+              );
+              res.json(deleteDoneItemOnSuccessResponse.toObject());
             }
           });
         } else {

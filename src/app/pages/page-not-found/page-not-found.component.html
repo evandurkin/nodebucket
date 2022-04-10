@@ -1,14 +1,15 @@
 <div fxLayout="column" class="main-welcome">
-  <mat-card>
-    <mat-card-title class="404-error">404 Error</mat-card-title>
-    <mat-card-content>
-      hey! what're you doing here?
+  <mat-card class="not-found-card">
+    <button class="logo no-hover-effect" routerLink="/" mat-button>nodebucket</button>
+    <mat-card-title class="not-found-error">404 Error</mat-card-title>
+    <mat-card-content class="not-found-text">
+      <span style="font-weight: 700; font-style: italic;">hey!</span> what're you doing here?
       <br/>
-      get back to your tasks
+      <span style="font-size: 40px;">Let's get you back to your tasks</span>
     </mat-card-content>
 
-    <button mat-stroked-button>
-      <a href="/">Back to Tasks</a>
-    </button>
+<!--Back to Tasks Link-->
+<a href="/" class="link-back-to-tasks">Back to Tasks</a>
+
   </mat-card>
 </div>
