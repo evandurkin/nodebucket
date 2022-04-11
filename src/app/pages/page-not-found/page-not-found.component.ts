@@ -1,3 +1,12 @@
+/*
+=======================================
+// Title: Nodebucket Application
+// Author: Evan Durkin
+// Date: April 10, 2022
+// Description: Page Not Found component
+=======================================
+*/
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

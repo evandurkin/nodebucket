@@ -9,6 +9,7 @@
 
 import { Item } from "./item.interface";
 
+// Employee model with employee ID and toDo and done arrays
 export interface Employee {
   empId: string;
   toDo: Item[];

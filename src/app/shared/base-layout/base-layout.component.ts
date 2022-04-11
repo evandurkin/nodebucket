@@ -24,6 +24,7 @@ export class BaseLayoutComponent implements OnInit {
   isLoggedIn: boolean;
   name: string;
 
+  // creates user session and confirms user to the console
   constructor(private cookieService: CookieService, private router: Router) {
     this.isLoggedIn = this.cookieService.get("session_user") ? true : false;
     console.log("isLoggedIn: " + this.isLoggedIn);

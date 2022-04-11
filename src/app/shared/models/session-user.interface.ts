@@ -7,6 +7,7 @@
 =====================================================
 */
 
+// session user model with employee ID and first and last name for session
 export interface SessionUser {
   empId: string;
   firstName: string;
