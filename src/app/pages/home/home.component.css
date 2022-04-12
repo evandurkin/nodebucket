@@ -38,6 +38,11 @@
   background-color: #2962ff;
 }
 
+.task-card-toDo:hover, .task-card-done:hover {
+  cursor: all-scroll;
+  box-shadow: 0px 3px 4px #888888;
+}
+
 .task-card {
   font-size: 18px;
 }
@@ -45,12 +50,6 @@
 mat-card {
   background-color: #e3f2fd;
 }
-
-/* .mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer) {
-  font-family: 'PT Sans', sans-serif;
-  color: #2962ff;
-  font-size: 18px;
-} */
 
 
 /**** Angular Material icon and page text styling ****/
@@ -60,6 +59,7 @@ mat-icon.mat-icon.notranslate.task-icon.material-icons.mat-icon-no-color {
 mat-icon.mat-icon.notranslate.smile-icon.material-icons.mat-icon-no-color{
   font-size: 30px;
 }
+
 
 .task-col-title {
     font-family: 'Merriweather', serif;
@@ -77,6 +77,7 @@ mat-icon.mat-icon.notranslate.smile-icon.material-icons.mat-icon-no-color{
   font-family: 'PT Sans', sans-serif;
   color: #2962ff;
   font-size: 1em;
+  min-height: 150px;
 }
 
 
@@ -98,4 +99,8 @@ button.mat-focus-indicator.mat-stroked-button.mat-button-base:hover {
 
 .mat-stroked-button:not(.mat-button-disabled) {
   border-color: none;
+}
+
+.trash-can:hover {
+  font-size: 27px;
 }

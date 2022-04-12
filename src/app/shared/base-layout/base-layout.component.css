@@ -2,10 +2,14 @@
 
 .logo {
   font-size: 46px;
+  text-shadow: 0px 4px 4px #888888;
 }
 
 .logo:hover {
-  text-shadow: 0px 4px 5px #888888;
+  /* text-shadow: 0px 4px 5px #888888;
+  transition: .2s; */
+  font-size: 46px;
+  text-shadow: 0px 6px 7px #888888;
   transition: .2s;
 }
 
@@ -37,13 +41,13 @@ mat-toolbar {
 
 .footer {
   bottom: 0;
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   background-color: #e3f2fd;
 }
 
 .footer-content {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: lighter;
   padding-left: 100px;
   letter-spacing: 3px;
