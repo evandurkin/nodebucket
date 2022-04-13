@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, "../dist/nodebucket")));
 app.use("/", express.static(path.join(__dirname, "../dist/nodebucket")));
 
 // Connecting to server port
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // MongoDB connection string
 const conn =
